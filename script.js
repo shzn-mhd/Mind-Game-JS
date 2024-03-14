@@ -67,4 +67,16 @@ imageArray.sort(()=> 0.5 - Math.random());
 const gridDisplay = document.querySelector('#grid');
 // console.log(gridDisplay);
 
-console.log(imageArray);
+function createBoard(){
+    imageArray.forEach((img,index)=>{
+        // console.log(img,index);
+        //Create Image Element
+        const card = document.createElement('img');
+        card.setAttribute('src','images/question.jpeg');
+        gridDisplay.appendChild(card);
+    });
+}
+
+createBoard();
+
+// console.log(imageArray);
