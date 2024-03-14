@@ -84,6 +84,7 @@ function createBoard(){
 }
 
 createBoard();
+console.log(imageArray)
 
 function flipCard(){
     const cardId = this.getAttribute('data-id');
@@ -105,6 +106,8 @@ function checkMatch(){
 
     if(optioOne.name === optionTwo.name){
         console.log('match');
+        allCards[optioOne.id].src = 'images/tick.jpg';
+        allCards[optionTwo.id].src = 'images/tick.jpg';
     }
 }
 
