@@ -113,6 +113,9 @@ function checkMatch(){
         allCards[optioOne.id].src = 'images/question.jpeg';
         allCards[optionTwo.id].src = 'images/question.jpeg';
     }
+
+    //after matching rest the array
+    cardChoosen = [];
 }
 
 // console.log(imageArray);
