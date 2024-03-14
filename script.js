@@ -67,16 +67,25 @@ imageArray.sort(()=> 0.5 - Math.random());
 const gridDisplay = document.querySelector('#grid');
 // console.log(gridDisplay);
 
+
 function createBoard(){
     imageArray.forEach((img,index)=>{
         // console.log(img,index);
         //Create Image Element
         const card = document.createElement('img');
         card.setAttribute('src','images/question.jpeg');
+        card.setAttribute('data-id',index);
+        card.addEventListener('click',flipCard);
         gridDisplay.appendChild(card);
     });
 }
 
 createBoard();
+
+function flipCard(){
+    const cardId = this.getAttribute('data-id');
+    
+    this.setAttribute('src',imageArray[cardId].url);
+}
 
 // console.log(imageArray);
