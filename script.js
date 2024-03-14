@@ -61,9 +61,8 @@ const imageArray = [
 
 ];
 
-let numberOfCardsSelected = 0;
 let cardChoosen = [];
-
+let mark = 0; 
 imageArray.sort(()=> 0.5 - Math.random());
 
 //Select the grid
@@ -109,13 +108,22 @@ function checkMatch(){
         //if element match
         allCards[optioOne.id].src = 'images/tick.jpg';
         allCards[optionTwo.id].src = 'images/tick.jpg';
+
+        mark = mark + 100 / 6;
     } else {
         allCards[optioOne.id].src = 'images/question.jpeg';
         allCards[optionTwo.id].src = 'images/question.jpeg';
     }
 
+    
     //after matching rest the array
     cardChoosen = [];
+    displayMarks();
+}
+
+function displayMarks(){
+    const finalMarks = Math.round(mark) + '%'
+    console.log(finalMarks);
 }
 
 // console.log(imageArray);
