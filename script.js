@@ -93,7 +93,7 @@ function flipCard(){
     cardChoosen.push({...imageArray[cardId], id: cardId});
 
     if(cardChoosen.length === 2){
-        checkMatch();
+        setTimeout(checkMatch, 500);
     }
     // console.log(cardChoosen);
 }
@@ -105,9 +105,13 @@ function checkMatch(){
     const allCards =document.querySelectorAll('img');
 
     if(optioOne.name === optionTwo.name){
-        console.log('match');
+        // console.log('match');
+        //if element match
         allCards[optioOne.id].src = 'images/tick.jpg';
         allCards[optionTwo.id].src = 'images/tick.jpg';
+    } else {
+        allCards[optioOne.id].src = 'images/question.jpeg';
+        allCards[optionTwo.id].src = 'images/question.jpeg';
     }
 }
 
