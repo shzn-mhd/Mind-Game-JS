@@ -123,7 +123,8 @@ function checkMatch(){
 
 function displayMarks(){
     const finalMarks = Math.round(mark) + '%'
-    console.log(finalMarks);
+    const markh3 = document.getElementById('mark');
+    markh3.innerText = finalMarks;
 }
 
 // console.log(imageArray);
