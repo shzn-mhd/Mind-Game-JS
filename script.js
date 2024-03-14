@@ -61,6 +61,9 @@ const imageArray = [
 
 ];
 
+let numberOfCardsSelected = 0;
+let cardChoosen = [];
+
 imageArray.sort(()=> 0.5 - Math.random());
 
 //Select the grid
@@ -86,6 +89,16 @@ function flipCard(){
     const cardId = this.getAttribute('data-id');
     
     this.setAttribute('src',imageArray[cardId].url);
+    cardChoosen.push(imageArray[cardId]);
+
+    if(cardChoosen.length === 2){
+        checkMatch();
+    }
+    // console.log(cardChoosen);
+}
+
+function checkMatch(){
+    console.log(cardChoosen);
 }
 
 // console.log(imageArray);
